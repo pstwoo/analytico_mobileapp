@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:restaurantflutter/DropDown.dart';
 import 'package:restaurantflutter/GetInsured.dart';
+import 'package:restaurantflutter/HomePage.dart';
+import 'package:restaurantflutter/Onboarding.dart';
 
 class LifeInsurance extends StatelessWidget {
+  int currentIndex;
+  LifeInsurance({
+    required this.currentIndex,
+  });
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -12,15 +19,40 @@ class LifeInsurance extends StatelessWidget {
   }
 }
 
-enum SingingCharacter { lafayette, jefferson }
-
 class lifeInsurance extends StatefulWidget {
   @override
   _lifeInsuranceState createState() => _lifeInsuranceState();
 }
 
+int _currentIndex = 1;
+
 class _lifeInsuranceState extends State<lifeInsurance> {
-  SingingCharacter? _character = SingingCharacter.lafayette;
+  void onTappedBar(int index) {
+    Navigator.pop(context);
+    if (index == 0) {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => HomePage(currentIndex: index)));
+    } else if (index == 1) {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => LifeInsurance(currentIndex: index)));
+    } else if (index == 2) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => DropDown()));
+    } else if (index == 3) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => Onboarding()));
+    } else if (index == 4) {
+      print(
+        index.toString(),
+      );
+      // Navigator.push(
+      //     context, MaterialPageRoute(builder: (context) => GetInsured()));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -83,12 +115,16 @@ class _lifeInsuranceState extends State<lifeInsurance> {
             ],
           )),
       bottomNavigationBar: BottomNavigationBar(
+        onTap: (index) {
+          _currentIndex = index;
+          onTappedBar(index);
+        },
+        currentIndex: _currentIndex,
         type: BottomNavigationBarType.fixed,
         backgroundColor: Color(0xffb265138),
         selectedItemColor: Color(0XFFf4f2dc),
         unselectedItemColor: Color(0XFFf4f2dc),
         iconSize: 35,
-        onTap: (value) => {},
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

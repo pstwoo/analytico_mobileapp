@@ -4,6 +4,9 @@ import 'package:restaurantflutter/GetInsured.dart';
 import 'package:restaurantflutter/HealthInsurance.dart';
 import 'package:restaurantflutter/LifeInsurance.dart';
 
+import 'HomePage.dart';
+import 'Onboarding.dart';
+
 class DropDown extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -20,6 +23,35 @@ class dropDown extends StatefulWidget {
 }
 
 class _dropDownState extends State<dropDown> {
+  void onTappedBar(int index) {
+    Navigator.pop(context);
+    if (index == 0) {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => HomePage(currentIndex: index)));
+    } else if (index == 1) {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => LifeInsurance(
+                    currentIndex: index,
+                  )));
+    } else if (index == 2) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => DropDown()));
+    } else if (index == 3) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => Onboarding()));
+    } else if (index == 4) {
+      print(
+        index.toString(),
+      );
+      // Navigator.push(
+      //     context, MaterialPageRoute(builder: (context) => GetInsured()));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,7 +113,7 @@ class _dropDownState extends State<dropDown> {
                     height: 15,
                   ),
                   InkWell(
-                    onTap: openLifeInsurance,
+                    onTap: () {},
                     child: Container(
                       width: 230,
                       padding:
@@ -115,7 +147,7 @@ class _dropDownState extends State<dropDown> {
                     height: 10,
                   ),
                   InkWell(
-                    onTap: openHealthInsurance,
+                    onTap: () {},
                     child: Container(
                       width: 230,
                       padding:
@@ -149,7 +181,7 @@ class _dropDownState extends State<dropDown> {
                     height: 10,
                   ),
                   InkWell(
-                    onTap: openCarInsurance,
+                    onTap: () {},
                     child: Container(
                       width: 230,
                       padding:
@@ -191,7 +223,7 @@ class _dropDownState extends State<dropDown> {
         selectedItemColor: Color(0XFFf4f2dc),
         unselectedItemColor: Color(0XFFf4f2dc),
         iconSize: 35,
-        onTap: (value) => {},
+        onTap: (index) => onTappedBar(index),
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -214,20 +246,5 @@ class _dropDownState extends State<dropDown> {
         ],
       ),
     );
-  }
-
-  void openLifeInsurance() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => LifeInsurance()));
-  }
-
-  void openHealthInsurance() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => HealthInsurance()));
-  }
-
-  void openCarInsurance() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => CarInsurance()));
   }
 }

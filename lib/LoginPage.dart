@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Homepage.dart';
 import 'SignUpPage.dart';
 import 'HomePage.dart';
 
@@ -204,6 +205,8 @@ class _loginPageState extends State<loginPage> {
 
   void openHomePage() {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => Homepage()));
+        context,
+        MaterialPageRoute(
+            builder: (context) => Homepage(currentGlobalIndex: 0)));
   }
 }

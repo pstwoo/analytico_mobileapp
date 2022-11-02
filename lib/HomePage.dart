@@ -3,7 +3,16 @@ import 'package:restaurantflutter/GetInsured.dart';
 import 'package:restaurantflutter/StyleScheme.dart';
 import 'package:restaurantflutter/ViewInsurance.dart';
 
-class Homepage extends StatelessWidget {
+int currentGlobalIndex = 0;
+
+class HomePage extends StatelessWidget {
+  int currentIndex;
+  HomePage({
+    required this.currentIndex,
+  }) {
+    currentGlobalIndex = this.currentIndex;
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

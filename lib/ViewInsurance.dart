@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:restaurantflutter/DropDown.dart';
+import 'package:restaurantflutter/GetInsured.dart';
 import 'package:restaurantflutter/HomePage.dart';
-import 'package:restaurantflutter/main.dart';
+import 'package:restaurantflutter/LifeInsurance.dart';
+import 'package:restaurantflutter/Onboarding.dart';
 
 class ViewInsurance extends StatelessWidget {
   @override
@@ -18,17 +21,39 @@ class viewInsurance extends StatefulWidget {
 }
 
 class _viewInsuranceState extends State<viewInsurance> {
-  int _currentIndex = 0;
-  final List<Widget> _children = [Homepage()];
   void onTappedBar(int index) {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => MyHomePage()));
+    Navigator.pop(context);
+    if (index == 0) {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => HomePage(currentIndex: index)));
+    } else if (index == 1) {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => LifeInsurance(
+                    currentIndex: index,
+                  )));
+    } else if (index == 2) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => DropDown()));
+    } else if (index == 3) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => Onboarding()));
+    } else if (index == 4) {
+      print(
+        index.toString(),
+      );
+      // Navigator.push(
+      //     context, MaterialPageRoute(builder: (context) => GetInsured()));
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _children[_currentIndex],
+      body: Container(),
       backgroundColor: Color(0XFFf4f2dc),
       appBar: AppBar(
         backgroundColor: Color(0XFFf4f2dc),
@@ -56,8 +81,7 @@ class _viewInsuranceState extends State<viewInsurance> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        onTap: onTappedBar,
-        currentIndex: _currentIndex,
+        onTap: (index) => onTappedBar(index),
         type: BottomNavigationBarType.fixed,
         backgroundColor: Color(0xffb265138),
         selectedItemColor: Color(0XFFf4f2dc),
