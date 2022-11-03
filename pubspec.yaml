@@ -68,6 +68,37 @@ flutter:
     - assets/images/google.png
     - assets/images/bannerImg.png
     - assets/images/servicesImg.png
+    # life insurance
+    - assets/images/lica.png
+    - assets/images/licb.png
+    - assets/images/licc.png
+    - assets/images/lica1.png
+    - assets/images/lica2.png
+    - assets/images/lica3.png
+    - assets/images/licathreeone.png
+    - assets/images/licathreetwo.png
+    - assets/images/licathreethree.png
+    #health insurance
+    - assets/images/healthinsurancebelowone.png
+    - assets/images/healthinsurancebelowtwo.png
+    - assets/images/healthinsurancebelowthree.png
+    - assets/images/healthinsuranceframe1.png
+    - assets/images/healthinsuranceframe2.png
+    - assets/images/healthinsuranceframe3.png
+    - assets/images/healthinsuranceframe4.png
+    - assets/images/healthinsuranceframe5.png
+    - assets/images/healthinsuranceframe6.png
+    #car insurance
+    - assets/images/carinsuranceframe1.png
+    - assets/images/carinsuranceframe2.png
+    - assets/images/carinsuranceframe3.png
+    - assets/images/carinsuranceframe4.png
+    - assets/images/carinsuranceframe5.png
+    - assets/images/carinsuranceframe6.png
+    - assets/images/carinsuranceframe7.png
+    - assets/images/carinsuranceframe8.png
+    - assets/images/carinsuranceframe9.png
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

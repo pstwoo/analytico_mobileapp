@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:restaurantflutter/DropDown.dart';
-import 'package:restaurantflutter/GetInsured.dart';
+import 'package:restaurantflutter/LifeOne.dart';
 
 class LifeInsurance extends StatelessWidget {
   @override
@@ -12,16 +12,12 @@ class LifeInsurance extends StatelessWidget {
   }
 }
 
-enum SingingCharacter { lafayette, jefferson }
-
 class lifeInsurance extends StatefulWidget {
   @override
   _lifeInsuranceState createState() => _lifeInsuranceState();
 }
 
 class _lifeInsuranceState extends State<lifeInsurance> {
-  SingingCharacter? _character = SingingCharacter.lafayette;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +30,7 @@ class _lifeInsuranceState extends State<lifeInsurance> {
           color: Color(0xffb265138),
           onPressed: () => Navigator.push(context, MaterialPageRoute(
             builder: (context) {
-              return getInsured();
+              return dropDown();
             },
           )),
         ),
@@ -80,41 +76,44 @@ class _lifeInsuranceState extends State<lifeInsurance> {
                   ],
                 ),
               ),
+              InkWell(
+                onTap: openLifeOne,
+                child: Container(
+                  padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(3)),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black,
+                          blurRadius: 4,
+                          offset: Offset(4, 8),
+                        )
+                      ],
+                      gradient: LinearGradient(
+                          colors: [Color(0xffb265138), Color(0xffb265138)],
+                          stops: [0, 1],
+                          begin: Alignment.topCenter)),
+                  child: Center(
+                    child: Text(
+                      "Next",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 22,
+                          fontWeight: FontWeight.w700,
+                          fontFamily: 'sfpro'),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 260,
+              ),
             ],
           )),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: Color(0xffb265138),
-        selectedItemColor: Color(0XFFf4f2dc),
-        unselectedItemColor: Color(0XFFf4f2dc),
-        iconSize: 35,
-        onTap: (value) => {},
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.content_paste_search_rounded), label: 'Browse'),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.health_and_safety),
-            label: 'Insurance',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_rounded),
-            label: 'Profile',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
-          ),
-        ],
-      ),
     );
   }
 
-  void openDropDown() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => DropDown()));
+  void openLifeOne() {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => LifeOne()));
   }
 }

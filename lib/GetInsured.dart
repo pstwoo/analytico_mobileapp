@@ -52,7 +52,7 @@ class _getInsuredState extends State<getInsured> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 70,
+              height: 100,
             ),
             Expanded(
               child: Column(
@@ -137,38 +137,10 @@ class _getInsuredState extends State<getInsured> {
               ),
             ),
             SizedBox(
-              height: 160,
+              height: 260,
             ),
           ],
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: Color(0xffb265138),
-        selectedItemColor: Color(0XFFf4f2dc),
-        unselectedItemColor: Color(0XFFf4f2dc),
-        iconSize: 35,
-        onTap: (value) => {},
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.content_paste_search_rounded), label: 'Browse'),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.health_and_safety),
-            label: 'Insurance',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_rounded),
-            label: 'Profile',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
-          ),
-        ],
       ),
     );
   }

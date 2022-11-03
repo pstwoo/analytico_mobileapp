@@ -100,7 +100,7 @@ class _homePageState extends State<homePage> {
             ),
           ),
           SizedBox(
-            height: 6,
+            height: 30,
           ),
           Text(
             "Services",
@@ -118,7 +118,7 @@ class _homePageState extends State<homePage> {
             ),
           ),
           Container(
-              height: 200,
+              height: 150,
               decoration: BoxDecoration(
                   color: Color(0xffb265138),
                   borderRadius: BorderRadius.circular(10),
@@ -133,18 +133,14 @@ class _homePageState extends State<homePage> {
                 children: [
                   Container(
                     height: 200,
-                    width: 120,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image:
-                                AssetImage('assets/images/servicesImg.png'))),
+                    width: 100,
                   ),
                   Expanded(
                     child: Container(
-                      padding: EdgeInsets.all(30),
+                      padding: EdgeInsets.all(20),
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Text(
                             "Get a Quote Now",
@@ -228,15 +224,8 @@ class _homePageState extends State<homePage> {
                 Row(
                   children: [
                     Text(
-                      "Availability ",
+                      "INSURANCE DETAILS",
                       style: contentStyle,
-                    ),
-                    Text(
-                      "Available",
-                      style: contentStyle.copyWith(color: Colors.green),
-                    ),
-                    SizedBox(
-                      height: 10,
                     ),
                     InkWell(
                       onTap: viewInsurance,
@@ -265,7 +254,7 @@ class _homePageState extends State<homePage> {
                   ],
                 ),
                 SizedBox(
-                  height: 0,
+                  height: 20,
                 ),
                 Text(
                   "We are open from 7:00 AM to 8:00 PM",
@@ -316,7 +305,7 @@ class _homePageState extends State<homePage> {
         backgroundColor: Color(0xffb265138),
         selectedItemColor: Color(0XFFf4f2dc),
         unselectedItemColor: Color(0XFFf4f2dc),
-        iconSize: 35,
+        iconSize: 30,
         onTap: (value) => {},
         items: [
           BottomNavigationBarItem(
@@ -327,7 +316,7 @@ class _homePageState extends State<homePage> {
               icon: Icon(Icons.content_paste_search_rounded), label: 'Browse'),
           BottomNavigationBarItem(
             icon: Icon(Icons.health_and_safety),
-            label: 'Insurance',
+            label: 'MyInsurance',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person_rounded),
