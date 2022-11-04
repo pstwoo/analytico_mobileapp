@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:restaurantflutter/CarOne.dart';
 import 'package:restaurantflutter/DropDown.dart';
-import 'package:restaurantflutter/HealthOne.dart';
 
 class CarInsurance extends StatelessWidget {
   @override
@@ -49,68 +48,52 @@ class _carInsuranceState extends State<carInsurance> {
         ],
       ),
       body: Container(
-          padding: EdgeInsets.all(20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: 0,
-              ),
-              Expanded(
-                child: Column(
-                  children: [
-                    Text(
-                      "Car Insurance: Enter your Details",
-                      style: TextStyle(
-                          shadows: [
-                            Shadow(
-                              offset: Offset(0.0, 2),
-                              blurRadius: 3.0,
-                              color: Colors.black,
-                            )
-                          ],
-                          color: Color(0xffb265138),
-                          fontSize: 25,
-                          fontWeight: FontWeight.w400,
-                          fontFamily: 'sfpro'),
-                    ),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+          Container(
+              padding: EdgeInsets.all(90),
+              width: 800,
+              height: 600,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/carform.png'),
+                ),
+              )),
+          InkWell(
+            onTap: openCarOne,
+            child: Container(
+              padding: EdgeInsets.symmetric(vertical: 0),
+              width: 150,
+              height: 30,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black,
+                      blurRadius: 4,
+                      offset: Offset(4, 8),
+                    )
                   ],
+                  gradient: LinearGradient(
+                      colors: [Color(0xffb265138), Color(0xffb265138)],
+                      stops: [0, 1],
+                      begin: Alignment.topCenter)),
+              child: Center(
+                child: Text(
+                  "Next",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 22,
+                      fontWeight: FontWeight.w700,
+                      fontFamily: 'sfpro'),
                 ),
               ),
-              InkWell(
-                onTap: openCarOne,
-                child: Container(
-                  padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(3)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black,
-                          blurRadius: 4,
-                          offset: Offset(4, 8),
-                        )
-                      ],
-                      gradient: LinearGradient(
-                          colors: [Color(0xffb265138), Color(0xffb265138)],
-                          stops: [0, 1],
-                          begin: Alignment.topCenter)),
-                  child: Center(
-                    child: Text(
-                      "Next",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 22,
-                          fontWeight: FontWeight.w700,
-                          fontFamily: 'sfpro'),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 260,
-              ),
-            ],
-          )),
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+        ]),
+      ),
     );
   }
 

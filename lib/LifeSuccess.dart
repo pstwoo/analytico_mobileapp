@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:restaurantflutter/CarConfirm.dart';
-import 'package:restaurantflutter/CarTwo.dart';
+import 'package:restaurantflutter/HomePage.dart';
+import 'package:restaurantflutter/LifeConfirm.dart';
 
-class CarThree extends StatelessWidget {
+class LifeSuccess extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: carThree(),
+      home: lifeSuccess(),
     );
   }
 }
 
-class carThree extends StatefulWidget {
+class lifeSuccess extends StatefulWidget {
   @override
-  _carThreeState createState() => _carThreeState();
+  _lifeSuccessState createState() => _lifeSuccessState();
 }
 
-class _carThreeState extends State<carThree> {
+class _lifeSuccessState extends State<lifeSuccess> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +30,7 @@ class _carThreeState extends State<carThree> {
           color: Color(0xffb265138),
           onPressed: () => Navigator.push(context, MaterialPageRoute(
             builder: (context) {
-              return carTwo();
+              return lifeConfirm();
             },
           )),
         ),
@@ -44,43 +44,28 @@ class _carThreeState extends State<carThree> {
             icon: Icon(Icons.notifications),
             color: Color(0xffb265138),
             onPressed: () {},
-          )
+          ),
         ],
       ),
       body: Container(
         child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
           Container(
               padding: EdgeInsets.all(90),
-              width: MediaQuery.of(context).size.width,
+              width: 800,
+              height: 600,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/images/carinsuranceframe7.png'),
-                ),
-              )),
-          Container(
-              padding: EdgeInsets.all(90),
-              width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/carinsuranceframe8.png'),
-                ),
-              )),
-          Container(
-              padding: EdgeInsets.all(90),
-              width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/carinsuranceframe9.png'),
+                  image: AssetImage('assets/images/lifesuccess.png'),
                 ),
               )),
           InkWell(
-            onTap: openCarConfirm,
+            onTap: openHomePage,
             child: Container(
               padding: EdgeInsets.symmetric(vertical: 0),
               width: 150,
               height: 30,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  borderRadius: BorderRadius.all(Radius.circular(30)),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black,
@@ -112,8 +97,8 @@ class _carThreeState extends State<carThree> {
     );
   }
 
-  void openCarConfirm() {
+  void openHomePage() {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => CarConfirm()));
+        context, MaterialPageRoute(builder: (context) => Homepage()));
   }
 }

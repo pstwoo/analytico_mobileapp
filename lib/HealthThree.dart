@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restaurantflutter/HealthConfirm.dart';
 import 'package:restaurantflutter/HealthTwo.dart';
 
 class HealthThree extends StatelessWidget {
@@ -73,12 +74,13 @@ class _healthThreeState extends State<healthThree> {
                 ),
               )),
           InkWell(
-            onTap: () {},
+            onTap: openHealthConfirm,
             child: Container(
               padding: EdgeInsets.symmetric(vertical: 0),
-              width: 90,
+              width: 150,
+              height: 30,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(3)),
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black,
@@ -108,5 +110,10 @@ class _healthThreeState extends State<healthThree> {
         ]),
       ),
     );
+  }
+
+  void openHealthConfirm() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => HealthConfirm()));
   }
 }

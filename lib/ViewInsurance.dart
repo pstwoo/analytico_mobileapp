@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:restaurantflutter/CarInsurance.dart';
+import 'package:restaurantflutter/CarSuccess.dart';
+import 'package:restaurantflutter/HealthInsurance.dart';
 import 'package:restaurantflutter/HomePage.dart';
-import 'package:restaurantflutter/main.dart';
+import 'package:restaurantflutter/LifeConfirm.dart';
+import 'package:restaurantflutter/LifeInsurance.dart';
 
 class ViewInsurance extends StatelessWidget {
   @override
@@ -18,17 +22,18 @@ class viewInsurance extends StatefulWidget {
 }
 
 class _viewInsuranceState extends State<viewInsurance> {
-  int _currentIndex = 0;
-  final List<Widget> _children = [Homepage()];
-  void onTappedBar(int index) {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => MyHomePage()));
-  }
-
+  int pageIndex = 0;
+  List<Widget> pageList = <Widget>[
+    CarSuccess(),
+    HealthInsurance(),
+    CarInsurance(),
+    LifeInsurance(),
+    LifeConfirm()
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _children[_currentIndex],
+      body: pageList[pageIndex],
       backgroundColor: Color(0XFFf4f2dc),
       appBar: AppBar(
         backgroundColor: Color(0XFFf4f2dc),
@@ -56,9 +61,12 @@ class _viewInsuranceState extends State<viewInsurance> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        onTap: onTappedBar,
-        currentIndex: _currentIndex,
-        type: BottomNavigationBarType.fixed,
+        currentIndex: pageIndex,
+        onTap: (value) {
+          setState(() {
+            pageIndex = value;
+          });
+        },
         backgroundColor: Color(0xffb265138),
         selectedItemColor: Color(0XFFf4f2dc),
         unselectedItemColor: Color(0XFFf4f2dc),

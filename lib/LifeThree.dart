@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restaurantflutter/LifeConfirm.dart';
 import 'package:restaurantflutter/LifeTwo.dart';
 
 class LifeThree extends StatelessWidget {
@@ -73,12 +74,13 @@ class _lifeThreeState extends State<lifeThree> {
                 ),
               )),
           InkWell(
-            onTap: () {},
+            onTap: openLifeConfirm,
             child: Container(
               padding: EdgeInsets.symmetric(vertical: 0),
-              width: 90,
+              width: 150,
+              height: 30,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(3)),
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black,
@@ -108,5 +110,10 @@ class _lifeThreeState extends State<lifeThree> {
         ]),
       ),
     );
+  }
+
+  void openLifeConfirm() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => LifeConfirm()));
   }
 }

@@ -77,9 +77,10 @@ class _healthTwoState extends State<healthTwo> {
             onTap: openHealthThree,
             child: Container(
               padding: EdgeInsets.symmetric(vertical: 0),
-              width: 90,
+              width: 150,
+              height: 30,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(3)),
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black,
