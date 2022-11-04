@@ -30,11 +30,14 @@ class _signUpPageState extends State<signUpPage> {
               height: 50,
             ),
             Container(
-              height: 70,
-              width: 70,
+              height: 100,
+              width: 100,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage('assets/images/logo1.png'))),
+                image: AssetImage(
+                  'assets/images/logo1.png',
+                ),
+              )),
             ),
             Expanded(
               child: Column(
@@ -44,7 +47,7 @@ class _signUpPageState extends State<signUpPage> {
                   Text(
                     "Sign Up",
                     style: TextStyle(
-                        color: Colors.orange,
+                        color: Color(0xffb265138),
                         fontSize: 30,
                         fontWeight: FontWeight.w700,
                         fontFamily: 'sfpro'),
@@ -81,7 +84,7 @@ class _signUpPageState extends State<signUpPage> {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(40)),
                         gradient: LinearGradient(
-                            colors: [Color(0xfff3953b), Color(0xffe57509)],
+                            colors: [Color(0xffb265138), Color(0xffb265138)],
                             stops: [0, 1],
                             begin: Alignment.topCenter)),
                     child: Center(
@@ -118,7 +121,7 @@ class _signUpPageState extends State<signUpPage> {
                   child: Text(
                     " LOGIN",
                     style: TextStyle(
-                        color: Colors.orange,
+                        color: Color(0xffb265138),
                         fontSize: 16,
                         fontWeight: FontWeight.w700),
                   ),

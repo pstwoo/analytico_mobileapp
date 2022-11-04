@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:restaurantflutter/BcarOne.dart';
 
-import 'package:restaurantflutter/HomePage.dart';
-
-class CarSuccess extends StatelessWidget {
+class BcarInsurance extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: carSuccess(),
+      home: bcarInsurance(),
     );
   }
 }
 
-class carSuccess extends StatefulWidget {
+class bcarInsurance extends StatefulWidget {
   @override
-  _carSuccessState createState() => _carSuccessState();
+  _bcarInsuranceState createState() => _bcarInsuranceState();
 }
 
-class _carSuccessState extends State<carSuccess> {
+class _bcarInsuranceState extends State<bcarInsurance> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,20 +26,20 @@ class _carSuccessState extends State<carSuccess> {
           Container(
               padding: EdgeInsets.all(90),
               width: 800,
-              height: 600,
+              height: 550,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/images/carsuccess.png'),
+                  image: AssetImage('assets/images/carform.png'),
                 ),
               )),
           InkWell(
-            onTap: openHomePage,
+            onTap: openBcarOne,
             child: Container(
               padding: EdgeInsets.symmetric(vertical: 0),
               width: 150,
               height: 30,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  borderRadius: BorderRadius.all(Radius.circular(3)),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black,
@@ -72,8 +71,7 @@ class _carSuccessState extends State<carSuccess> {
     );
   }
 
-  void openHomePage() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => Homepage()));
+  void openBcarOne() {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => BcarOne()));
   }
 }

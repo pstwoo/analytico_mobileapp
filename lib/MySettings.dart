@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:restaurantflutter/HomePageContent.dart';
 
-import 'package:restaurantflutter/HomePage.dart';
-
-class CarSuccess extends StatelessWidget {
+class MySettings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: carSuccess(),
+      home: mySettings(),
     );
   }
 }
 
-class carSuccess extends StatefulWidget {
+class mySettings extends StatefulWidget {
   @override
-  _carSuccessState createState() => _carSuccessState();
+  _mySettingsState createState() => _mySettingsState();
 }
 
-class _carSuccessState extends State<carSuccess> {
+class _mySettingsState extends State<mySettings> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,14 +26,14 @@ class _carSuccessState extends State<carSuccess> {
           Container(
               padding: EdgeInsets.all(90),
               width: 800,
-              height: 600,
+              height: 580,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/images/carsuccess.png'),
+                  image: AssetImage('assets/images/settings.png'),
                 ),
               )),
           InkWell(
-            onTap: openHomePage,
+            onTap: openHomePageContent,
             child: Container(
               padding: EdgeInsets.symmetric(vertical: 0),
               width: 150,
@@ -54,7 +53,7 @@ class _carSuccessState extends State<carSuccess> {
                       begin: Alignment.topCenter)),
               child: Center(
                 child: Text(
-                  "Next",
+                  "Dashboard",
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 22,
@@ -72,8 +71,8 @@ class _carSuccessState extends State<carSuccess> {
     );
   }
 
-  void openHomePage() {
+  void openHomePageContent() {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => Homepage()));
+        context, MaterialPageRoute(builder: (context) => HomePageContent()));
   }
 }

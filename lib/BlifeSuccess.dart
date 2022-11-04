@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:restaurantflutter/MyBrowse.dart';
 
-import 'package:restaurantflutter/HomePage.dart';
-
-class CarSuccess extends StatelessWidget {
+class BlifeSuccess extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: carSuccess(),
+      home: blifeSuccess(),
     );
   }
 }
 
-class carSuccess extends StatefulWidget {
+class blifeSuccess extends StatefulWidget {
   @override
-  _carSuccessState createState() => _carSuccessState();
+  _blifeSuccessState createState() => _blifeSuccessState();
 }
 
-class _carSuccessState extends State<carSuccess> {
+class _blifeSuccessState extends State<blifeSuccess> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,20 +26,20 @@ class _carSuccessState extends State<carSuccess> {
           Container(
               padding: EdgeInsets.all(90),
               width: 800,
-              height: 600,
+              height: 550,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/images/carsuccess.png'),
+                  image: AssetImage('assets/images/lifesuccess.png'),
                 ),
               )),
           InkWell(
-            onTap: openHomePage,
+            onTap: openMyBrowse,
             child: Container(
               padding: EdgeInsets.symmetric(vertical: 0),
               width: 150,
               height: 30,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  borderRadius: BorderRadius.all(Radius.circular(30)),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black,
@@ -72,8 +71,8 @@ class _carSuccessState extends State<carSuccess> {
     );
   }
 
-  void openHomePage() {
+  void openMyBrowse() {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => Homepage()));
+        context, MaterialPageRoute(builder: (context) => MyBrowse()));
   }
 }

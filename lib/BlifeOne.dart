@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:restaurantflutter/BlifeTwo.dart';
 
-import 'package:restaurantflutter/HomePage.dart';
-
-class CarSuccess extends StatelessWidget {
+class BlifeOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: carSuccess(),
+      home: blifeOne(),
     );
   }
 }
 
-class carSuccess extends StatefulWidget {
+class blifeOne extends StatefulWidget {
   @override
-  _carSuccessState createState() => _carSuccessState();
+  _blifeOneState createState() => _blifeOneState();
 }
 
-class _carSuccessState extends State<carSuccess> {
+class _blifeOneState extends State<blifeOne> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,15 +25,30 @@ class _carSuccessState extends State<carSuccess> {
         child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
           Container(
               padding: EdgeInsets.all(90),
-              width: 800,
-              height: 600,
+              width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/images/carsuccess.png'),
+                  image: AssetImage('assets/images/lica1.png'),
+                ),
+              )),
+          Container(
+              padding: EdgeInsets.all(90),
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/lica2.png'),
+                ),
+              )),
+          Container(
+              padding: EdgeInsets.all(90),
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/lica3.png'),
                 ),
               )),
           InkWell(
-            onTap: openHomePage,
+            onTap: openBlifeTwo,
             child: Container(
               padding: EdgeInsets.symmetric(vertical: 0),
               width: 150,
@@ -72,8 +86,8 @@ class _carSuccessState extends State<carSuccess> {
     );
   }
 
-  void openHomePage() {
+  void openBlifeTwo() {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => Homepage()));
+        context, MaterialPageRoute(builder: (context) => BlifeTwo()));
   }
 }

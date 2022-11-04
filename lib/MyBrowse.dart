@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:restaurantflutter/DropDown.dart';
+import 'package:restaurantflutter/BdropDown.dart';
 
-class GetInsured extends StatelessWidget {
+class MyBrowse extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: getInsured(),
+      home: myBrowse(),
     );
   }
 }
 
-class getInsured extends StatefulWidget {
+class myBrowse extends StatefulWidget {
   @override
-  _getInsuredState createState() => _getInsuredState();
+  _myBrowseState createState() => _myBrowseState();
 }
 
-class _getInsuredState extends State<getInsured> {
+class _myBrowseState extends State<myBrowse> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0XFFf4f2dc),
@@ -82,7 +82,7 @@ class _getInsuredState extends State<getInsured> {
               ),
             ),
             InkWell(
-              onTap: openDropDown,
+              onTap: openBdropDown,
               child: Container(
                 padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
                 decoration: BoxDecoration(
@@ -111,7 +111,7 @@ class _getInsuredState extends State<getInsured> {
               ),
             ),
             SizedBox(
-              height: 260,
+              height: 200,
             ),
           ],
         ),
@@ -119,8 +119,8 @@ class _getInsuredState extends State<getInsured> {
     );
   }
 
-  void openDropDown() {
+  void openBdropDown() {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => DropDown()));
+        context, MaterialPageRoute(builder: (context) => BdropDown()));
   }
 }

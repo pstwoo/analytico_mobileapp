@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:restaurantflutter/BcarTwo.dart';
 
-import 'package:restaurantflutter/HomePage.dart';
-
-class CarSuccess extends StatelessWidget {
+class BcarOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: carSuccess(),
+      home: bcarOne(),
     );
   }
 }
 
-class carSuccess extends StatefulWidget {
+class bcarOne extends StatefulWidget {
   @override
-  _carSuccessState createState() => _carSuccessState();
+  _bcarOneState createState() => _bcarOneState();
 }
 
-class _carSuccessState extends State<carSuccess> {
+class _bcarOneState extends State<bcarOne> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,21 +25,38 @@ class _carSuccessState extends State<carSuccess> {
         child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
           Container(
               padding: EdgeInsets.all(90),
-              width: 800,
-              height: 600,
+              width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/images/carsuccess.png'),
+                  image: AssetImage('assets/images/carinsuranceframe1.png'),
+                ),
+              )),
+          Container(
+              padding: EdgeInsets.all(90),
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/carinsuranceframe2.png'),
+                ),
+              )),
+          Container(
+              padding: EdgeInsets.all(90),
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/carinsuranceframe3.png'),
                 ),
               )),
           InkWell(
-            onTap: openHomePage,
+            onTap: openBcarTwo,
             child: Container(
-              padding: EdgeInsets.symmetric(vertical: 0),
+              padding: EdgeInsets.symmetric(
+                vertical: 5,
+              ),
               width: 150,
               height: 30,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  borderRadius: BorderRadius.all(Radius.circular(3)),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black,
@@ -72,8 +88,7 @@ class _carSuccessState extends State<carSuccess> {
     );
   }
 
-  void openHomePage() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => Homepage()));
+  void openBcarTwo() {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => BcarTwo()));
   }
 }

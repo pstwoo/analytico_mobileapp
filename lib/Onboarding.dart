@@ -133,7 +133,7 @@ class _onboardingState extends State<onboarding> {
         Container(
           padding: EdgeInsets.symmetric(vertical: 10, horizontal: 40),
           child: Text(
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+            "Nowadays, a lot of financial solutions can get you to your goals in life. Through its life insurance and investment-linked insurance plans, you can grow your money as well as secure the future of your family no matter what happens, helping you reach the dreams you have planned together.",
             style: TextStyle(
               fontSize: 16,
               fontFamily: 'times new roman',

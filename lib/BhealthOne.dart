@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:restaurantflutter/BhealthTwo.dart';
 
-import 'package:restaurantflutter/HomePage.dart';
-
-class CarSuccess extends StatelessWidget {
+class BhealthOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: carSuccess(),
+      home: bhealthOne(),
     );
   }
 }
 
-class carSuccess extends StatefulWidget {
+class bhealthOne extends StatefulWidget {
   @override
-  _carSuccessState createState() => _carSuccessState();
+  _bhealthOneState createState() => _bhealthOneState();
 }
 
-class _carSuccessState extends State<carSuccess> {
+class _bhealthOneState extends State<bhealthOne> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,15 +25,33 @@ class _carSuccessState extends State<carSuccess> {
         child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
           Container(
               padding: EdgeInsets.all(90),
-              width: 800,
-              height: 600,
+              width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/images/carsuccess.png'),
+                  image:
+                      AssetImage('assets/images/healthinsurancebelowone.png'),
+                ),
+              )),
+          Container(
+              padding: EdgeInsets.all(90),
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image:
+                      AssetImage('assets/images/healthinsurancebelowtwo.png'),
+                ),
+              )),
+          Container(
+              padding: EdgeInsets.all(90),
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image:
+                      AssetImage('assets/images/healthinsurancebelowthree.png'),
                 ),
               )),
           InkWell(
-            onTap: openHomePage,
+            onTap: openBhealthTwo,
             child: Container(
               padding: EdgeInsets.symmetric(vertical: 0),
               width: 150,
@@ -72,8 +89,8 @@ class _carSuccessState extends State<carSuccess> {
     );
   }
 
-  void openHomePage() {
+  void openBhealthTwo() {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => Homepage()));
+        context, MaterialPageRoute(builder: (context) => BhealthTwo()));
   }
 }

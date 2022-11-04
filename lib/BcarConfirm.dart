@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:restaurantflutter/BcarSuccess.dart';
 
-import 'package:restaurantflutter/HomePage.dart';
-
-class CarSuccess extends StatelessWidget {
+class BcarConfirm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: carSuccess(),
+      home: bcarConfirm(),
     );
   }
 }
 
-class carSuccess extends StatefulWidget {
+class bcarConfirm extends StatefulWidget {
   @override
-  _carSuccessState createState() => _carSuccessState();
+  _bcarConfirmState createState() => _bcarConfirmState();
 }
 
-class _carSuccessState extends State<carSuccess> {
+class _bcarConfirmState extends State<bcarConfirm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,14 +26,14 @@ class _carSuccessState extends State<carSuccess> {
           Container(
               padding: EdgeInsets.all(90),
               width: 800,
-              height: 600,
+              height: 550,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/images/carsuccess.png'),
+                  image: AssetImage('assets/images/carconfirm.png'),
                 ),
               )),
           InkWell(
-            onTap: openHomePage,
+            onTap: openBcarSuccess,
             child: Container(
               padding: EdgeInsets.symmetric(vertical: 0),
               width: 150,
@@ -72,8 +71,8 @@ class _carSuccessState extends State<carSuccess> {
     );
   }
 
-  void openHomePage() {
+  void openBcarSuccess() {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => Homepage()));
+        context, MaterialPageRoute(builder: (context) => BcarSuccess()));
   }
 }

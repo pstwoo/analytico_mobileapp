@@ -82,7 +82,7 @@ class _carOneState extends State<carOne> {
               width: 150,
               height: 30,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  borderRadius: BorderRadius.all(Radius.circular(3)),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black,
